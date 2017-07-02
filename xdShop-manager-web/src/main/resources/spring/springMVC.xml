@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 记得加mvc的schema -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+	<!-- 扫描controller -->
+	<context:component-scan base-package="com.xdShop.controller"></context:component-scan>
+	<!-- 可以识别annotation -->
+	<mvc:annotation-driven />
+	<!-- 配置视图解析器 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- 配置前缀 -->
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<!-- 配置后缀 -->
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	<!--  由于在web.xml中定义的url拦截形式为“/”表示拦截所有的url请求，
+	包括静态资源例如css、js等。所以需要在springmvc.xml中添加资源映射标签：-->
+	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
+	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
+	
+	<!-- 定义文件上传解析器 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 设定默认编码 -->
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+		<property name="maxUploadSize" value="5242880"></property>
+	</bean>
+</beans>
