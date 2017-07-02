@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_xdshop-common" default="compile.module.xdshop-common">
+  <dirname property="module.xdshop-common.basedir" file="${ant.file.module_xdshop-common}"/>
+  
+  <property name="module.jdk.home.xdshop-common" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.xdshop-common" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.xdshop-common" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.xdshop-common" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="xdshop-common.output.dir" value="${module.xdshop-common.basedir}/target/classes"/>
+  <property name="xdshop-common.testoutput.dir" value="${module.xdshop-common.basedir}/target/test-classes"/>
+  
+  <path id="xdshop-common.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="xdshop-common.module.production.classpath">
+    <path refid="${module.jdk.classpath.xdshop-common}"/>
+    <path refid="library.maven:_joda-time:joda-time:2.5.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.3.2.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:1.3.2.classpath"/>
+    <path refid="library.maven:_commons-net:commons-net:3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.2.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.2.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.3.1.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.3.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-log4j12:1.6.4.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.6.4.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.16.classpath"/>
+  </path>
+  
+  <path id="xdshop-common.runtime.production.module.classpath">
+    <pathelement location="${xdshop-common.output.dir}"/>
+    <path refid="library.maven:_joda-time:joda-time:2.5.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.3.2.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:1.3.2.classpath"/>
+    <path refid="library.maven:_commons-net:commons-net:3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.2.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.2.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.3.1.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.3.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-log4j12:1.6.4.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.6.4.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.16.classpath"/>
+  </path>
+  
+  <path id="xdshop-common.module.classpath">
+    <path refid="${module.jdk.classpath.xdshop-common}"/>
+    <pathelement location="${xdshop-common.output.dir}"/>
+    <path refid="library.maven:_joda-time:joda-time:2.5.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.3.2.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:1.3.2.classpath"/>
+    <path refid="library.maven:_commons-net:commons-net:3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.2.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.2.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.3.1.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.3.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-log4j12:1.6.4.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.6.4.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.16.classpath"/>
+  </path>
+  
+  <path id="xdshop-common.runtime.module.classpath">
+    <pathelement location="${xdshop-common.testoutput.dir}"/>
+    <pathelement location="${xdshop-common.output.dir}"/>
+    <path refid="library.maven:_joda-time:joda-time:2.5.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.3.2.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:1.3.2.classpath"/>
+    <path refid="library.maven:_commons-net:commons-net:3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.2.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.2.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.3.1.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.3.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-log4j12:1.6.4.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.6.4.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.16.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.xdshop-common">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.xdshop-common">
+    <patternset refid="excluded.from.module.xdshop-common"/>
+  </patternset>
+  
+  <path id="xdshop-common.module.sourcepath">
+    <dirset dir="${module.xdshop-common.basedir}">
+      <include name="src/main/java"/>
+    </dirset>
+  </path>
+  
+  <path id="xdshop-common.module.test.sourcepath">
+    <dirset dir="${module.xdshop-common.basedir}">
+      <include name="src/main/test"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.xdshop-common" depends="compile.module.xdshop-common.production,compile.module.xdshop-common.tests" description="Compile module xdShop-common"/>
+  
+  <target name="compile.module.xdshop-common.production" depends="register.custom.compilers" description="Compile module xdShop-common; production classes">
+    <mkdir dir="${xdshop-common.output.dir}"/>
+    <javac2 destdir="${xdshop-common.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.xdshop-common}/javac">
+      <compilerarg line="${compiler.args.xdshop-common}"/>
+      <bootclasspath refid="xdshop-common.module.bootclasspath"/>
+      <classpath refid="xdshop-common.module.production.classpath"/>
+      <src refid="xdshop-common.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.xdshop-common"/>
+    </javac2>
+    
+    <copy todir="${xdshop-common.output.dir}">
+      <fileset dir="${module.xdshop-common.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.xdshop-common.tests" depends="register.custom.compilers,compile.module.xdshop-common.production" description="compile module xdShop-common; test classes" unless="skip.tests">
+    <mkdir dir="${xdshop-common.testoutput.dir}"/>
+    <javac2 destdir="${xdshop-common.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.xdshop-common}/javac">
+      <compilerarg line="${compiler.args.xdshop-common}"/>
+      <bootclasspath refid="xdshop-common.module.bootclasspath"/>
+      <classpath refid="xdshop-common.module.classpath"/>
+      <src refid="xdshop-common.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.xdshop-common"/>
+    </javac2>
+    
+    <copy todir="${xdshop-common.testoutput.dir}">
+      <fileset dir="${module.xdshop-common.basedir}/src/main/test">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.xdshop-common" description="cleanup module">
+    <delete dir="${xdshop-common.output.dir}"/>
+    <delete dir="${xdshop-common.testoutput.dir}"/>
+  </target>
+</project>
