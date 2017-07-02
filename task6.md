@@ -22,7 +22,7 @@
 
 ## 三、内容设计
 
-###1、信息设计 
+### 1、信息设计 
 采用自顶向下的信息设计，由于对所要开发的网站的内容有详细的了解，所以采用自上而下，逐步分解的方式，关联内容，指导达到最低成要求的内容。
 
 ### 2、信息架构
@@ -32,7 +32,7 @@
 
 主要内容模型
 
-（加图）
+![内容模型](https://github.com/pan-lei/WebProject/blob/master/task6WebDesign/%E5%86%85%E5%AE%B9%E8%AE%BE%E8%AE%A1%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9%E6%A8%A1%E5%9E%8B.png)
 
 #### 2.1、组织系统 　　
 在组织方式上采用了层次结构和网络结构，具体如下：
@@ -60,4 +60,4 @@
 
 总的功能设计
 
-（加图）
+![功能设计](https://github.com/pan-lei/WebProject/blob/master/task6WebDesign/%E5%8A%9F%E8%83%BD%E8%AE%BE%E8%AE%A1.png)
