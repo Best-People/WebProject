@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.xdShop.search.mapper.ItemMapper" >
+	<resultMap id="BaseResultMap" type="com.xdShop.common.pojo.Item" >
+		<id column="id" property="id" />
+		<result column="title" property="title" />
+		<result column="sell_point" property="sell_point" />
+		<result column="price" property="price" />
+		<result column="image" property="image" />
+		<result column="category_name" property="name" />
+		<result column="item_desc" property="item_desc" />
+	</resultMap>
+    <select id="getItemList" resultMap="BaseResultMap">
+       SELECT
+			a.id,
+			a.title,
+			a.sell_point,
+			a.price,
+			a.image,
+			b.NAME,
+			c.item_desc
+		FROM
+			tb_item a
+		LEFT JOIN tb_item_cat b ON a.cid = b.id
+		LEFT JOIN tb_item_desc c ON a.id = c.item_id
+
+    </select>
+
+</mapper>
